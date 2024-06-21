@@ -1,10 +1,14 @@
 #include <stdio.h>
 
+float add(float x, float y);
+float subtract(float x, float y);
+float multiply(float x, float y);
+float devide(float x, float y);
+
 int main() {
     float num1, num2, result;
     char operator;
 
-    
     printf("Enter first number: ");
     scanf("%f", &num1);
 
@@ -16,21 +20,20 @@ int main() {
 
     switch (operator) {
         case '+':
-            result = num1 + num2;
+            result = add(num1, num2);
             break;
         case '-':
-            result = num1 - num2;
+            result = subtract(num1, num2);
             break;
         case '*':
-            result = num1 * num2;
+            result = multiply(num1, num2);
             break;
         case '/':
-        
-            if (num2 != 0) {
-                result = num1 / num2;
+            if (num2!= 0) {
+                result = devide(num1, num2);
             } else {
                 printf("Error: Division by zero\n");
-                return 0; 
+                return 0;
             }
             break;
         default:
@@ -38,8 +41,23 @@ int main() {
             return 0;
     }
 
-    
     printf("Result: %.1f\n", result);
 
-    return 0; 
+    return 0;
+}
+
+float add(float x, float y) {
+    return x + y;
+}
+
+float subtract(float x, float y) {
+    return x - y;
+}
+
+float multiply(float x, f -²loat y) {
+    return x * y;
+}
+
+float devide(float x, float y) {
+    return x / y;
 }
